@@ -19,13 +19,13 @@ void test(const string name, const vector<int> w, const vector<int> v, const int
 	for(int i = 0; i < w.size()-1; i++){
 		cout << w[i] << ", ";
 	}
-	cout << w[w.size()-1] << endl;
+	cout << w[w.size()-1]<<"}" << endl;
 	
 	cout << "-> Value:  {";
 	for(int i = 0; i < v.size()-1; i++){
 		cout<< v[i] << ", ";
 	}
-	cout << v[v.size()-1] << endl;
+	cout << v[v.size()-1]<<"}" << endl;
 
 	int max = knapsack(w,v,M,MEM);
 
@@ -65,7 +65,7 @@ int main(){
 
 	w = {1,2,3};
 	v = {10,20,30};
-	test("---Test 5: Everything Fits---",w,v,20,50);
+	test("---Test 5: Everything Fits---",w,v,20,60);
 
 	w = {5, 4, 3};
 	v = {10,9,9};
