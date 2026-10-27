@@ -11,4 +11,6 @@ vector<vector<int>> memIni(int coinN, int d);
 
 int maxMonedasMEM(const vector<int> m, const int d, vector<vector<int>>& MEM);
 
+vector<int> monedas(const vector<int> m, const int d);
+
 #endif

@@ -45,3 +45,26 @@ int maxMonedasMEM(const vector<int> m, const int d, vector<vector<int>>& MEM){
 	min_val = MEM[m.size()-1][d];
 	return min_val;
 }
+
+vector<int> monedas(const vector<int> m, const int d){
+	
+	vector<vector<int>> MEM;
+	
+	int min = maxMonedasMEM(m,d,MEM);
+	
+	vector<int> s(m.size(),0);
+
+	int i = n-1;
+	int j = d;
+
+	while(i != 0 && j!= 0){
+		if(i == 0 || MEM[i][j] != MEM[i-1][j]){
+			s[i] = s[i] + 1;
+			j = j - m[i];
+		} else {
+			i = i-1;
+		}
+	}
+	return s;
+}
+
