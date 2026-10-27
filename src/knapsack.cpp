@@ -43,9 +43,7 @@ int	knapsackSol(const vector<int> w, const vector<int> v, const int m, vector<in
 
 	int result = knapsack(w,v,m,MEM);
 
-	for(int i = 0; i < w.size(); i++){
-		s[i] = 0;
-	}
+	s.assign(w.size(),0);
 
 	int i = w.size();
 	int j = m;
