@@ -37,3 +37,26 @@ int knapsack(const vector<int> w, const vector<int> v, const int m, vector<vecto
 	return MEM[ce+1][cw];
 }
 
+int	knapsackSol(const vector<int> w, const vector<int> v, const int m, vector<int>& s){
+	
+	vector<vector<int>> MEM;
+
+	int result = knapsack(w,v,m,MEM);
+
+	for(int i = 0; i < w.size(); i++){
+		s[i] = 0;
+	}
+
+	int i = w.size();
+	int j = m;
+
+	while(i > 0 && j > 0){
+		if(MEM[i][j] != MEM[i-1][j]){
+			s[i-1] = 1;
+			j -= w[i-1];
+		}
+
+		i--;
+	}
+	return result;
+}
